@@ -341,35 +341,34 @@
           }
         ],
         "requestBody": {
-          "required": true,
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
                 "type": "object",
                 "properties": {
                   "name": {
+                    "description": "Contacts's name",
                     "type": "string",
-                    "description": "Contact's name",
                     "example": "John Doe"
                   },
                   "phoneNumber": {
-                    "type": "string",
                     "description": "Contact's phone number",
-                    "example": "+380000000000"
+                    "type": "string",
+                    "example": "+38000000000000"
                   },
                   "email": {
-                    "type": "string",
                     "description": "Contact's email",
-                    "example": "example@mail.com"
+                    "type": "string",
+                    "example": "example@gmail.com"
                   },
                   "isFavourite": {
+                    "description": "Contact's is favorite",
                     "type": "boolean",
-                    "description": "Contact is favourite",
                     "example": true
                   },
                   "contactType": {
+                    "description": "Student's contact type",
                     "type": "string",
-                    "description": "Contact's type",
                     "enum": [
                       "work",
                       "home",
@@ -377,9 +376,9 @@
                     ]
                   },
                   "photo": {
+                    "description": "Contact's photo",
                     "type": "string",
-                    "description": "Link to contact's photo",
-                    "example": "https://res.cloudinary.com/uqwgdu/image/upload/image.png"
+                    "format": "binary"
                   }
                 }
               }
